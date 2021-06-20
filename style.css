@@ -19,6 +19,5 @@ body {
   background-color: rgb(0, 81, 255);
 }
 .card-body {
-  padding-bottom: auto;
   height: 500px;
 }
