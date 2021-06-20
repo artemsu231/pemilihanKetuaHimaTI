@@ -19,5 +19,5 @@ body {
   background-color: rgb(0, 81, 255);
 }
 .card-body {
-  height: 500px;
+  height: fit-content;
 }
