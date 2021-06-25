@@ -77,12 +77,12 @@
                 </div>
               </div>
             </div>
-            <h2 class="text-white text-center pt-lg-5">MASUKAN PILIAHAN ANDA DIBAWAH INI</h2>
+            <h2 class="text-center pt-lg-5">MASUKAN PILIAHAN ANDA DIBAWAH INI</h2>
         <form name="absensi">
-          <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+        <!--  <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
             <strong>Terimakasih!</strong> Sudah Memberikan Suara Anda
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
+          </div> -->
           <class="mb-3">
             <label for="input1" class="form-label">Nama</label>
             <input type="text" class="form-control" id="input1" aria-describedby="input1" name="nama" />
@@ -104,7 +104,8 @@
             <div id="inputHelp" class="form-text">Isikan : Nama,Nim,Status Serta Pilihan anda (1 untuk calon 1, & 2 untuk calon 2 )  ( kolom Nim hanya untuk MAHASISWA )</div>              
             </div>
           
-          <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
+            <!--menambah sweetallert2-->
+          <button type="submit" class="btn btn-primary btn-kirim" onclick="Swal.fire('<strong>Terimakasih!</strong> Sudah Memberikan Suara Anda')" >Kirim</button>
           <button class="btn btn-primary d-none btn-loading" type="button" disabled>
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             Loading...
@@ -124,13 +125,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.8.1/dist/sweetalert2.all.min.js"></script>
 
+    <!--sweetaler2-->
+    <script src="dist/sweetalert2.all.min.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
     <script>      
       const scriptURL = 'https://script.google.com/macros/s/AKfycbzpGWzG5R-a8ggbIVwnaYp4S3FVkVDEhxgdo4q4DOvqbA-9glGzui07HUes8NMb_myL/exec';
       const form = document.forms['absensi'];
       const btnKirim = document.querySelector('.btn-kirim');
       const btnLoading = document.querySelector('.btn-loading');
-      const myAlert = document.querySelector('.my-alert');
+     // const myAlert = document.querySelector('.my-alert');
 
       form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -145,13 +149,13 @@
             btnLoading.classList.toggle('d-none');
             btnKirim.classList.toggle('d-none');
             //tampilkan allert
-            myAlert.classList.toggle('d-none');
+           // myAlert.classList.toggle('d-none');
             //reset form
             form.reset();
             console.log('Success!', response);
           })
           .catch((error) => console.error('Error!', error.message));
       });
+      
     </script>
-  </body>
 </html>
