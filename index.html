@@ -105,7 +105,7 @@
             </div>
           
             <!--menambah sweetallert2-->
-          <button type="submit" class="btn btn-primary btn-kirim" onclick="Swal.fire('<strong>Terimakasih!</strong> Sudah Memberikan Suara Anda')" >Kirim</button>
+          <button type="submit" class="btn btn-primary btn-kirim" onclick="Swal.fire('<strong>Terimakasih!</strong> Sudah Memberikan Suara Anda')">Kirim</button>
           <button class="btn btn-primary d-none btn-loading" type="button" disabled>
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             Loading...
@@ -138,6 +138,7 @@
 
       form.addEventListener('submit', (e) => {
         e.preventDefault();
+        
         //ketika tombol kirim di klik
         //tampilkan tombol loading, hilangkan tombol kirim
         btnLoading.classList.toggle('d-none');
@@ -152,7 +153,10 @@
            // myAlert.classList.toggle('d-none');
             //reset form
             form.reset();
+            
+            window.location = "https://artemsu231.github.io/pemilihanKetuaHimaTI/";
             console.log('Success!', response);
+            
           })
           .catch((error) => console.error('Error!', error.message));
       });
